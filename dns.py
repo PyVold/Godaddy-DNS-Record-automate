@@ -1,7 +1,6 @@
 import requests
-import time
 import json
-from requests.auth import HTTPBasicAuth
+from requests.auth import HTTPBasicAuth  #don't remove
 
 api_key=""
 api_secret=""
