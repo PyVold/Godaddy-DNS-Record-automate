@@ -7,9 +7,9 @@ import requests
 import json
 from requests.auth import HTTPBasicAuth  #don't remove
  
-api_key="dKYdWjinTtCF_Kr3mSoyBdZf1gSJJ8HMn3y"
-api_secret="7SxTMTHZtaFt4UGoynp1j7"
-domain = "packetshow.com"
+api_key=""
+api_secret=""
+domain = "domain.com"
  
  
 headers = {"Authorization" : "sso-key {}:{}".format(api_key, api_secret), 'Content-type':'application/json', 'Accept':'application/json'}
