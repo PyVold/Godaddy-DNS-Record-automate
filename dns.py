@@ -20,8 +20,8 @@ url="https://api.godaddy.com/v1/domains/{}/records/A/%40".format(domain)
  
 # Option#1 CHECK Current IP address for the DNS RECORD FROM GODADDY
 '''
-DNS_A = requests.get(url, headers=headers)
-current_ip=DNS_A.json()[0]['data']
+DNS_A = requests.get(url, headers=headers)    # Not preferred option
+current_ip = DNS_A.json()[0]['data']
 '''
  
 # Option#2 Check DNS record from a file - to avoid many API requestes
