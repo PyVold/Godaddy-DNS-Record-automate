@@ -1,4 +1,4 @@
-##########################################################################                                                                                                                                                       
+##########################################################################                                                                                                                                              
 ################################## PyVOLD ################################
 ########################### osama@ipdevops.com ###########################
 ##########################################################################
@@ -9,10 +9,8 @@ from requests.auth import HTTPBasicAuth  #don't remove
  
 api_key=""
 api_secret=""
-domains = ['domain2.com', 'domain2.com'] 
-
+domains = ['domain1.com', 'domain2.com', 'domain3.com'] 
 here = os.path.dirname(__file__)
-
 def check_ip_address():
   # Option#1 CHECK Current IP address for the DNS RECORD FROM GODADDY
   '''
@@ -23,8 +21,9 @@ def check_ip_address():
   # Option#2 Check DNS record from a file - to avoid many API requestes
   current_ip = open(os.path.join(here, '.newip'), 'r').readline()
   # Get the servers public IP address
-  ipresponse = requests.get("http://ipv4bot.whatismyipaddress.com")
-  public_ip = ipresponse.text
+  ipresponse = requests.get("http://api.myip.com")
+  public_ip = json.loads(ipresponse.text)
+  print(public_ip['ip'])
 
   return public_ip, current_ip
 
@@ -64,6 +63,4 @@ def main():
       url="https://api.godaddy.com/v1/domains/{}/records/A/%40".format(domain)
       update_dns_record(url, public_ip, current_ip, data)
 
-
-# Run the script from here!
 main()
