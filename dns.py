@@ -11,6 +11,7 @@ api_key=""
 api_secret=""
 domains = ['domain1.com', 'domain2.com', 'domain3.com']
 record_name = "@"
+
 here = os.path.dirname(__file__)
 def check_ip_address():
   # Option#1 CHECK Current IP address for the DNS RECORD FROM GODADDY
