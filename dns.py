@@ -22,9 +22,10 @@ def check_ip_address():
   
   # Option#2 Check DNS record from a file - to avoid many API requestes
   current_ip = open(os.path.join(here, '.newip'), 'r').readline()
+  
   # Get the servers public IP address
-  ipresponse = requests.get("https://api.my-ip.io/ip.txt"")
-  public_ip = ipresponse.text
+  ipresponse = requests.get("https://ipdevops.com/myip").json()
+  public_ip = ipresponse['ip']
 
   return public_ip, current_ip
 
