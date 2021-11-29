@@ -24,7 +24,7 @@ def check_ip_address():
   current_ip = open(os.path.join(here, '.newip'), 'r').readline()
   
   # Get the servers public IP address
-  ipresponse = requests.get("https://ipdevops.com/myip").json()
+  ipresponse = requests.get("https://ipdevops.com/api/myip").json()
   public_ip = ipresponse['ip']
 
   return public_ip, current_ip
